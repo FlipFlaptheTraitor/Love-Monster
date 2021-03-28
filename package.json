@@ -1,0 +1,20 @@
+{
+  "name": "love-monster",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FlipFlaptheTraitor/Love-Monster.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FlipFlaptheTraitor/Love-Monster/issues"
+  },
+  "homepage": "https://github.com/FlipFlaptheTraitor/Love-Monster#readme"
+}
