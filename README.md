@@ -67,16 +67,16 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   ## Acceptance_Criteria
   GIVEN a Dating game app
   WHEN I visit the site
-  THEN I am prompted to join via login info
-  WHEN I sign in for the first time
+  THEN I am prompted to login or signup
+  WHEN I signup for an account
   THEN I am prompted to fill out a form that saves my categorization and personality info
   WHEN I am finished filling out all the information  
-  THEN I am able to access the chat application and be connected to users similar to my personality info
-  WHEN I launch the chat 
-  THEN I am prompted to answer whether to be the admirer or a suitor
+  THEN I am able to choose between opening an empty room, going into an open chat forum with high compatibility users, or browse open rooms.
+  WHEN I launch the open chat 
+  THEN I am prompted to answer whether to be the admirer or the suitor
   WHEN If an admirer choices a suitor  
-  THEN The admirer and suitor are put into an one on chat
+  THEN The admirer and suitor are put into an one on one chat
   WHEN if an admire doesn't choose a suitor 
   THEN The chat is ended
-  WHEN If both the suitor and admirer choose to 
+  WHEN If both the suitor and admirer choose to chat later
   THEN Their user information is stored in each others account to carry on conversations later
