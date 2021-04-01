@@ -16,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/FlipFlaptheTraitor/Love-Monster/issues"
   },
-  "homepage": "https://github.com/FlipFlaptheTraitor/Love-Monster#readme"
+  "homepage": "https://github.com/FlipFlaptheTraitor/Love-Monster#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mysql2": "^2.2.5",
+    "path": "^0.12.7",
+    "sequelize": "^6.6.2"
+  }
 }
