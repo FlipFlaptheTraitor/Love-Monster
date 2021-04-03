@@ -1,4 +1,4 @@
-const router = requre('express').router();
+const router = requre('express').Router();
 
 router.get('/', (req,res) => {
     res.render('monster-questions');
