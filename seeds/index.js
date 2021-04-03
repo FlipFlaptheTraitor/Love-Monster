@@ -13,6 +13,9 @@ const seedAll = async () => {
     await seedMonsters();
     console.log('\n------ MONSTERS SEEDED  -------\n');
 
+    await seedMatches();
+    console.log('\n------ MATCHES SEEDED  -------\n');
+
     process.exit(0);
 };
 
