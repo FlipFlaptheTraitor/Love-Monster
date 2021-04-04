@@ -10,6 +10,10 @@ Question.init({
         primaryKey: true,
         autoIncrement: true
     },
+    questionAsked: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
     greenAnswerChoice: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -26,10 +30,6 @@ Question.init({
         type: DataTypes.STRING,
         allowNull: false,
     },
-    questionAsked: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    }
 },
 {
     sequelize,
