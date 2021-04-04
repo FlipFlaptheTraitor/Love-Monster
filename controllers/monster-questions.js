@@ -61,28 +61,28 @@ router.get('/', (req,res) => {
         {
             id: 8,
             questionAsked: 'It would be most troublesome for you if your partner was...',
-            greenAnswerChoice: '',
-            yellowAnswerChoice: '',
-            redAnswerChoice: '',
-            blueAnswerChoice: '',
+            greenAnswerChoice: 'Lazy',
+            yellowAnswerChoice: 'Jealous',
+            redAnswerChoice: 'Clingy',
+            blueAnswerChoice: 'Impulsive',
         },
         {
             id: 9,
-            questionAsked: '',
-            greenAnswerChoice: '',
-            yellowAnswerChoice: '',
-            redAnswerChoice: '',
-            blueAnswerChoice: '',
+            questionAsked: 'If you could choose the monster that lives under your bed, which of these would you choose?',
+            greenAnswerChoice: 'A monster that can see into the future.',
+            yellowAnswerChoice: 'A very nonthreatening monster that always tells terrible jokes.',
+            redAnswerChoice: 'A monster made purely out of all the socks you lost in the laundry.',
+            blueAnswerChoice: 'A monster that can rival your intellectual ability.',
         },
         {
             id: 10,
-            questionAsked: '',
-            greenAnswerChoice: '',
-            yellowAnswerChoice: '',
-            redAnswerChoice: '',
-            blueAnswerChoice: '',
+            questionAsked: 'What sounds most appealing on a rainy day?',
+            greenAnswerChoice: 'Playing in the puddles.',
+            yellowAnswerChoice: 'Drinking hot tea or coffee.',
+            redAnswerChoice: 'Taking a good nap.',
+            blueAnswerChoice: 'Reading a book.',
         },
-]);
+    ]);
 });
 
 module.exports = router;
