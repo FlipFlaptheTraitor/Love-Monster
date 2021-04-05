@@ -8,7 +8,7 @@ const io = require("socket.io")(3000)
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const sequelize = require('./config/connection');
 const exphbs = require('express-handlebars');
-const hbs = exphbs.create({ helpers });
+const hbs = exphbs.create({});
 
 const sess = {
    secret: 'Super secret secret',
