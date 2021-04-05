@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 router.get('/', (req,res) => {
-    res.render('mainquestions', [
+    res.render('mainquestions', {questionsQuiz : [
         {
             id: 1,
             questionAsked: 'Which of the following would you most hate people to call you?',
@@ -82,7 +82,8 @@ router.get('/', (req,res) => {
             redAnswerChoice: 'Taking a good nap.',
             blueAnswerChoice: 'Reading a book.',
         },
-    ]);
+    ]}
+    );
 });
 
 module.exports = router;

@@ -1,10 +1,7 @@
-<div class="questions">
-  <header>
-     <h1>
-      <a href="/">WHAT'S YOUR LOVE MONSTER?!</a>
-    </h1>
-  </header>
-  <main>
-    {{{ questions }}}
-  </main>
-</div>
+<ol class="questions">
+{{#each questionsQuiz as |Quiz|}}
+  <li>
+    {{> questions Quiz }}
+  </li>
+  {{/each}}
+</ol>
