@@ -1,6 +1,5 @@
 const path = require('path');
 const routes = require('./controllers');
-const helpers = require('./utils/helpers');
 const express = require('express');
 const session = require('express-session');
 const io = require("socket.io")(3000)
