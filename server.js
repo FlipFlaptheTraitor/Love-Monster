@@ -4,11 +4,12 @@ const helpers = require('./utils/helpers');
 const express = require('express');
 const session = require('express-session');
 const io = require("socket.io")(3000)
+const exphbs = require('express-handlebars');
+
 
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const sequelize = require('./config/connection');
-const exphbs = require('express-handlebars');
-const hbs = exphbs.create({ helpers });
+const hbs = exphbs.create({});
 
 const sess = {
    secret: 'Super secret secret',
@@ -33,6 +34,9 @@ app.use(routes);
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
+
+
+
 
 //temp only for testing see chatapp for further info
 const users = {}
