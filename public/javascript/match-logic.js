@@ -1,16 +1,16 @@
-//Connect to Question.js through routes
+//Connect to Question.js through routes?
 
 //Connect to user-answers.js through routes
-
+const routes = require('../../controllers/api/userAnswers');
 //To hold responses from questions & user-answsers GLOBAL
-var //questons
-var //user-answers
+let userAnswer = routes;
 
 //Show user the question (from handlebars)
 
 //Store Answer
-const storeAnswers = () => {
+const storeAnswers = (userAnswer) => {
     //Taking answer response and add one pt to answer color column
+    
 }
 
 //Answer Results
