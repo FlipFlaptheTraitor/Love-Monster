@@ -10,7 +10,19 @@
 
 <body>
     <header>
-        <h1> Love Monster</h1>
+      <h1 class="nav-item">
+        <a class="nav-link" href="/">Love Monster</a>
+      </h1>
+      <h3 class="nav-item">
+        {{#if loggedIn}}
+          <a class="nav-link" href="/dashboard">Dashboard</a>
+      </h3>
+      <nav class="nav-link">
+         <button id="logout" class="nav-link active">logout</button>
+        {{else}}
+         <a class="nav-link navbar-right" href="/login">login</a>
+        {{/if}}
+      </nav>
     </header>
     <main>
       {{{ body }}}
@@ -22,6 +34,10 @@
     </footer>
   </div>
  
+ {{#if loggedIn}}
+  <script src="/javascript/logout.js"></script>
+  {{/if}}
+
  
 </body>
 
