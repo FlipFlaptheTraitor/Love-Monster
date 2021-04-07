@@ -5,13 +5,13 @@ const monsterData = [
         monster: 'Sand Monster'
     },
     {
-        monster: 'Rock Monster'
+        monster: 'Earth Monster'
     },
     {
         monster: 'Water Monster'
     },
     {
-        monster: 'Land Monster'
+        monster: 'Lava Monster'
     }
 ];
 
