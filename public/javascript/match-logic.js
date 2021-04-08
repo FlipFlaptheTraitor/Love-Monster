@@ -1,5 +1,7 @@
 const submitButton = document.getElementById('submit-btn')
-//Connect to Question.js through routes?
+const confirmButton = document.getElementById('confirm-btn')
+
+let userScore = 0;
 
 //Connect to user-answers.js through routes
 const routes = require('../../controllers/api/userAnswers');
@@ -15,6 +17,8 @@ submitButton.addEventListener('click', () =>{
     answerResults();
 });
 
+confirmButton.addEventListener(confirmButton);
+
 //Store Answer
 const storeAnswers = (userAnswer) => {
     //Taking answer response and add one pt to answer color column
@@ -24,4 +28,8 @@ const storeAnswers = (userAnswer) => {
 //Answer Results
 const answerResults = () => {
 
+}
+
+const hideBtn = () =>{
+    
 }
