@@ -17,7 +17,7 @@ submitButton.addEventListener('click', () =>{
     answerResults();
 });
 
-confirmButton.addEventListener(confirmButton);
+confirmButton.addEventListener(hideBtn);
 
 //Store Answer
 const storeAnswers = (userAnswer) => {
@@ -31,5 +31,5 @@ const answerResults = () => {
 }
 
 const hideBtn = () =>{
-    
+    confirmButton.classList.add('hide');
 }
