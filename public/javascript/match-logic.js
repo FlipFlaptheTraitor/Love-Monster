@@ -1,3 +1,4 @@
+const submitButton = document.getElementById('submit-btn')
 //Connect to Question.js through routes?
 
 //Connect to user-answers.js through routes
@@ -7,10 +8,17 @@ let userAnswer = routes;
 
 //Show user the question (from handlebars)
 
+
+//Event Listeners
+submitButton.addEventListener('click', () =>{
+    storeAnswers();
+    answerResults();
+});
+
 //Store Answer
 const storeAnswers = (userAnswer) => {
     //Taking answer response and add one pt to answer color column
-    
+
 }
 
 //Answer Results
