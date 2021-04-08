@@ -2,10 +2,10 @@ const submitButton = document.getElementById('submit-btn')
 const confirmButton = document.getElementById('confirm-btn')
 
 let userScore = 0;
-let greenAnswers = 3;
-let redAnswers = 2;
-let yellowAnswers = 1;
-let blueAnswers = 0;
+const greenAnswers = 3;
+const redAnswers = 2;
+const yellowAnswers = 1;
+const blueAnswers = 0;
 
 //Event Listeners
 submitButton.addEventListener('click', () =>{
