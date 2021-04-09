@@ -6,8 +6,8 @@ const io = require("socket.io")(3000)
 
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const sequelize = require('./config/connection');
-const exphbs = require('express-handlebars');
-const hbs = exphbs.create({});
+const handlebars = require('express-handlebars');
+const hbs = handlebars.create({});
 
 const sess = {
    secret: 'Super secret secret',
@@ -32,7 +32,6 @@ app.use(routes);
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
-
 
 
 //temp only for testing see chatapp for further info
