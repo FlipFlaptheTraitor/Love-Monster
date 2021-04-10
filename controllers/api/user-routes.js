@@ -27,6 +27,7 @@ router.get('/:id', (req, res) => {
         where: {
             id: req.params.id
         },
+        attributes: { exclude: ['password'] },
         include: [
             {
                 model: Monster
@@ -36,70 +37,39 @@ router.get('/:id', (req, res) => {
             }
         ]
     })
-    .then(user => res.json(user))
+    .then(user => {
+      if(!user) {
+        res.status(404).json({ message: 'No user found with this id' });
+        return;
+      }
+      res.json(user)
+    })
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
     });
 });
 
-
-
-router.get('/', (req, res) => {
-    User.findAll({
-        attributes: { exclude: ['password'] }
-    })
-      .then(dbUserData => res.json(dbUserData))
-      .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-      });
+// create new user
+router.post('/', (req, res) => {
+  User.create(req.body)
+  .then( user => res.status(200).json(product))
+  .catch((err) => {
+    console.log(err);
+    res.status(400).json(err);
   });
-
-router.get('/:id', (req, res) => {
-    User.findOne({
-      attributes: { exclude: ['password'] },
-      where: {
-        id: req.params.id
-      },
-      include: [
-        {
-          model: Post,
-          attributes: ['id', 'title', 'post_text', 'created_at']
-        },
-        {
-            model: Comment,
-            attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-            include: {
-                model: Post,
-                attributes: ['title']
-            }
-        }
-      ]
-    })
-      .then(dbUserData => {
-        if (!dbUserData) {
-          res.status(404).json({ message: 'No user found with this id' });
-          return;
-        }
-        res.json(dbUserData);
-      })
-      .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-      });
-  });
+})
 
 
-
+// login to account
 router.post('/login',  (req, res) => {
     User.findOne({
         where: {
-        email: req.body.email
+        email: req.body.username
         }
     }).then(dbUserData => {
         if (!dbUserData) {
-        res.status(400).json({ message: 'No user with that email address!' });
+        res.status(400).json({ message: 'No user with that username!' });
         return;
         }
         const validPassword = dbUserData.checkPassword(req.body.password);
@@ -117,6 +87,8 @@ router.post('/login',  (req, res) => {
     });  
 });
 
+
+// logout out of account
 router.post('/logout', withAuth, (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
@@ -127,6 +99,7 @@ router.post('/logout', withAuth, (req, res) => {
   }
 })
 
+// update user
 router.put('/:id', withAuth, (req, res) => {
   
     User.update(req.body, {
@@ -148,6 +121,8 @@ router.put('/:id', withAuth, (req, res) => {
       });
   })
 
+
+// delete user
 router.delete('/:id', withAuth, (req, res) => {
     User.destroy({
       where: {
