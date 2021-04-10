@@ -7,21 +7,26 @@ let blueAnswers = document.querySelectorAll('input[id="blue"]');
 
 let userScore = 0;
 
-$("li").each(function(){
-    var $this = $(this),
-    id =$this.attr('id'),
-    
-    if($(this).prop('checked')){
-        console.log()
-    }
+$("input:radio").each(function(){
 
-})
+    var green = $(this).attr("id");
+    
+    
+        if($("[id='green']:checked").length == 1)
+        {
+            var src = $('#' + green).attr("datasrc")                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+    
+          console.log(green);
+          console.log(src);                        
+    
+        }                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+    });
 
 //Event Listeners
 submitButton.addEventListener('click', () =>{
     // storeAnswers();
     // answerResults();
-    console.log(greenAnswers)
+    console.log(green)
 });
 
 
