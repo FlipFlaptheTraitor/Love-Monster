@@ -8,12 +8,7 @@ const exphbs = require('express-handlebars');
 
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const sequelize = require('./config/connection');
-<<<<<<< HEAD
 const hbs = exphbs.create({});
-=======
-const handlebars = require('express-handlebars');
-const hbs = handlebars.create({});
->>>>>>> feature/login
 
 const sess = {
    secret: 'Super secret secret',
@@ -40,11 +35,8 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 
-<<<<<<< HEAD
 
 
-=======
->>>>>>> feature/login
 //temp only for testing see chatapp for further info
 const users = {}
 //chat app 
