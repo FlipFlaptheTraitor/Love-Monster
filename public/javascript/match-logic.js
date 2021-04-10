@@ -1,11 +1,12 @@
-const submitButton = document.getElementById('submit-btn')
-const confirmButton = document.getElementById('confirm-btn')
+const submitButton = document.getElementById('submit-btn');
+const confirmButton = document.getElementById('confirm-btn');
+let greenAnswers = document.querySelectorAll('input[id="green"]');
+let redAnswers = document.querySelectorAll('input[id="red"]');
+let yellowAnswers = document.querySelectorAll('input[id="yellow"]');
+let blueAnswers = document.querySelectorAll('input[id="blue"]');
 
 let userScore = 0;
-const greenAnswers = 3;
-const redAnswers = 2;
-const yellowAnswers = 1;
-const blueAnswers = 0;
+
 
 //Event Listeners
 submitButton.addEventListener('click', () =>{
@@ -16,8 +17,10 @@ submitButton.addEventListener('click', () =>{
 confirmButton.addEventListener(hideBtn);
 
 //Store Answers
-const storeAnswers = (userAnswer) => {
-    //Taking answer response and add one pt to answer color column
+const storeAnswers = () => {
+    if (greenAnswers.checked){
+        console.log('This works')
+    }
 
 }
 
