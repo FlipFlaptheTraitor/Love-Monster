@@ -5,7 +5,10 @@ const express = require('express');
 const session = require('express-session');
 const socketio = require('socket.io');
 const formatMessage = require('./utils/messages');
-const { userjoin, getCurrentUser, userLeave, getRoomUsers} = require('./utils/users');
+const { userJoin, getCurrentUser, userLeave, getRoomUsers} = require('./utils/users');
+const app = express()
+const server = http.createServer(app);
+const io = socketio(server);
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const sequelize = require('./config/connection');
 const exphbs = require('express-handlebars');
@@ -21,9 +24,9 @@ const sess = {
    })
  };
 
-const app = express()
-.get('/cool', (req, res) => res.send(cool()));
-const PORT = process.env.PORT || 3001;
+
+
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -36,9 +39,7 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 //chat app
-const chatApp = express(); 
-const server = http.createServer(chatApp);
-const io = socketio(server);
+
 
 const botName = 'LoveBot';
 
@@ -81,9 +82,7 @@ socket.on('dissconect', () => {
 });
 });
 
-const chatPort = 3000 || process.env.chatPort;
-
-server.listen(chatPort, () => console.log(`server running on port ${chatPort}`));
+const PORT = process.env.PORT || 3001;
 
 sequelize.sync({ force: false }).then(() => {
    app.listen(PORT, () => console.log(`Now listening on port ${PORT}!`));
