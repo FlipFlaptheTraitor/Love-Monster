@@ -1,12 +1,13 @@
 const path = require('path');
-const routes = require('./controllers/api/monsterQs');
+const routes = require('./controllers');
 const express = require('express');
 const session = require('express-session');
 const io = require("socket.io")(3000)
+const exphbs = require('express-handlebars');
+
 
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const sequelize = require('./config/connection');
-const exphbs = require('express-handlebars');
 const hbs = exphbs.create({});
 
 const sess = {
@@ -32,6 +33,9 @@ app.use(routes);
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
+
+
+
 
 //temp only for testing see chatapp for further info
 const users = {}
