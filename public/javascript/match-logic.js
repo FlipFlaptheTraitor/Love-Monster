@@ -1,7 +1,5 @@
 const submitButton = document.getElementById('submit-btn');
-const joinChat = document.getElementsByClassName('join-btn')
 let answerEl = $('#answerDiv')
-
 
 const answerChoice = function () {
 
@@ -68,7 +66,3 @@ submitButton.addEventListener('click', () =>{
     var test = answerChoice();
     var test2 = answerArray();
 });
-
-joinChat.addEventListener('click', () =>{
-    location.replace()
-})

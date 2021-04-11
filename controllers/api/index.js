@@ -1,5 +1,4 @@
 const router = require('express').Router();
-
 const userRoutes = require('./user-routes');
 const mudRoutes = require('./mudmonster')
 const sandRoutes = require('./sandmonster')
@@ -14,9 +13,7 @@ router.use('/sandmonster', sandRoutes);
 router.use('/lavamonster', lavaRoutes);
 router.use('/snowmonster', snowRoutes);
 
-const commentRoutes = require('./comment-routes');
 const chatRoutes = require('./chat-routes');
 router.use('/users', userRoutes);
-router.use('/comments', commentRoutes);
 router.use('/chat', chatRoutes);
 module.exports = router;
