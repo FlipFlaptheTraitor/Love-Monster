@@ -7,36 +7,39 @@ let blueAnswers = document.querySelectorAll('input[id="blue"]');
 
 let userScore = 0;
 
-$("input:radio").each(function(){
+const answerChoice = function () {
 
-    var green = $(this).attr("id");
-    
-    
-        if($("[id='green']:checked").length == 1)
-        {
-            var src = $('#' + green).attr("datasrc")                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
-    
-          console.log(green);
-          console.log(src);                        
-    
-        }                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+    var urls = [];
+
+    $('input:radio').each(function () {
+
+        var $this = $(this),
+            id = $this.attr('id'),
+            url = $this.attr('datasrc');
+
+        if ($(this).prop('checked')) {
+            urls.push('<div class="' + id + '">' + url + '</div>');
+            
+        }
     });
+    return urls;
+};
+
+//Function to check duplicates
+function countDups(answerChoice){
+    if(element.hasClass('green') > element.hasClass('red') && element.hasClass('yellow') && e.hasClass('blue')){
+        console.log('Mud Monster')
+    }
+    }
 
 //Event Listeners
 submitButton.addEventListener('click', () =>{
-    // storeAnswers();
+    var test = answerChoice();
+    var test2 = countDups();
     // answerResults();
-    console.log(green)
+    console.log(test)
 });
 
-
-//Store Answers
-const storeAnswers = () => {
-    if (greenAnswers){
-        console.log('This works')
-    }
-
-}
 
 //Answer Results
 // const answerResults = () => {
