@@ -2,20 +2,20 @@ const { Matches } = require('../models');
 
 const MatchesData = [
     {
-        monster_id: '1',
-        suitor_id: '2'
+        monsterUserId: '1',
+        suitorUserId: '2'
     },
     {
-        monster_id: '1',
-        suitor_id: '3'
+        monsterUserId: '1',
+        suitorUserId: '3'
     },
     {
-        monster_id: '2',
-        suitor_id: '3'
+        monsterUserId: '2',
+        suitorUserId: '3'
     },
     {
-        monster_id: '4',
-        suitor_id: '1'
+        monsterUserId: '4',
+        suitorUserId: '1'
     }
 ];
 

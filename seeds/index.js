@@ -1,17 +1,18 @@
 const seedUsers = require('./user-seeds');
 const seedMonsters = require('./monster-seeds');
+const seedMatches = require('./matches-seeds');
 
 const sequelize = require('../config/connection');
 
 const seedAll = async () => {
-    await sequalize.sync({ force: true });
+    await sequelize.sync({ force: true });
     console.log('\n------ DATABASE SYNCED -------\n');
+
+    await seedMonsters();
+    console.log('\n------ MONSTERS SEEDED  -------\n');
 
     await seedUsers();
     console.log('\n------ USERS SEEDED  -------\n');
-    
-    await seedMonsters();
-    console.log('\n------ MONSTERS SEEDED  -------\n');
 
     await seedMatches();
     console.log('\n------ MATCHES SEEDED  -------\n');
