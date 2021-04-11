@@ -33,8 +33,15 @@ router.get('/:id', (req, res) => {
                 model: Monster
             },
             {
-                model: Matches
-            }
+                model: User,
+                through: Matches,
+                as: 'userMonster'
+            },
+            {
+              model: User,
+              through: Matches,
+              as: 'userSuitor'
+          },
         ]
     })
     .then(user => {
@@ -58,7 +65,7 @@ router.post('/', (req, res) => {
     console.log(err);
     res.status(400).json(err);
   });
-})
+});
 
 
 // login to account
@@ -124,7 +131,13 @@ router.put('/:id', withAuth, (req, res) => {
 
 // delete user
 router.delete('/:id', withAuth, (req, res) => {
-    User.destroy({
+    Matches.destroy({
+      where: {
+        monsterUserId: req.params.id,
+        suitorUserId: req.params.id
+      }
+    })
+    .then(User.destroy({
       where: {
         id: req.params.id
       }
@@ -139,7 +152,7 @@ router.delete('/:id', withAuth, (req, res) => {
       .catch(err => {
         console.log(err);
         res.status(500).json(err);
-      });
+      }))
   });
 
 module.exports = router;

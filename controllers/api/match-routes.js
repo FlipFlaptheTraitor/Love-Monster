@@ -1,9 +1,9 @@
 const router = require('express').Router();
-const { Monster } = require('../../models');
+const { Matches } = require('../../models');
 
 router.get('/', (req, res) => {
-    Monster.findAll()
-    .then(monsters => res.json(monsters))
+    Matches.findAll()
+    .then(matches => res.json(matches))
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
 })
 
 router.get('/:id', (req, res) => {
-    Monster.findOne({
+    Matches.findOne({
         where: {
             id: req.params.id
         }
@@ -26,7 +26,7 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    Monster.create(req.body)
+    Matches.create(req.body)
     .then( monster => res.status(200).json(monster))
     .catch((err) => {
       console.log(err);
@@ -36,7 +36,7 @@ router.post('/', (req, res) => {
 
 router.put('/:id', (req, res) => {
   
-    Monster.update(req.body, {
+    Matches.update(req.body, {
         where: {
             id: req.params.id
         }
@@ -55,7 +55,7 @@ router.put('/:id', (req, res) => {
   });
 
   router.delete('/:id', (req, res) => {
-    Monster.destroy({
+    Matches.destroy({
       where: {
         id: req.params.id
       }

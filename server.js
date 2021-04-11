@@ -53,6 +53,6 @@ io.on('connection', socket => {
     delete users[socket.id]
   })
 })
-sequelize.sync({ force: true }).then(() => {
+sequelize.sync({ force: false }).then(() => {
    app.listen(PORT, () => console.log(`Now listening on port ${PORT}!`));
 });
