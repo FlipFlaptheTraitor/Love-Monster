@@ -1,7 +1,6 @@
 const router = require('express').Router();
 
 const userRoutes = require('./user-routes');
-// const commentRoutes = require('./comment-routes');
 const mudRoutes = require('./mudmonster')
 const sandRoutes = require('./sandmonster')
 const snowRoutes = require('./snowmonster')
@@ -10,10 +9,14 @@ const monsterQs = require('./monsterQs')
 
 router.use('/monsterQs', monsterQs);
 router.use('/users', userRoutes);
-// router.use('/comments', commentRoutes);
 router.use('/mudmonster', mudRoutes);
 router.use('/sandmonster', sandRoutes);
 router.use('/lavamonster', lavaRoutes);
 router.use('/snowmonster', snowRoutes);
 
+const commentRoutes = require('./comment-routes');
+const chatRoutes = require('./chat-routes');
+router.use('/users', userRoutes);
+router.use('/comments', commentRoutes);
+router.use('/chat', chatRoutes);
 module.exports = router;
