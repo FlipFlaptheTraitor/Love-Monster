@@ -1,9 +1,4 @@
 const submitButton = document.getElementById('submit-btn');
-// let greenAnswers = document.querySelectorAll("input[name='answers1']:checked").value;
-// let greenAnswers = document.getElementById('green').value;
-// let redAnswers = document.querySelectorAll('input[id="red"]');
-// let yellowAnswers = document.querySelectorAll('input[id="yellow"]');
-// let blueAnswers = document.querySelectorAll('input[id="blue"]');
 let answerEl = $('#answerDiv')
 
 
@@ -47,34 +42,28 @@ const answerArray = function () {
     console.log(redAnswers)
     console.log(yellowAnswers)
     console.log(blueAnswers)
+
+    if((greenAnswers > redAnswers) && (greenAnswers > yellowAnswers) && (greenAnswers > blueAnswers)){
+        console.log("This is Mud Monster");
+        location.replace('/api/mudmonster');
+    }
+    else if((redAnswers > greenAnswers) && (redAnswers > yellowAnswers) && (redAnswers > blueAnswers)){
+        console.log("This is Lava Monster");
+        location.replace('/api/lavamonster');
+    }
+    else if((yellowAnswers > greenAnswers) && (yellowAnswers > redAnswers) && (yellowAnswers > blueAnswers)){
+        console.log("This is Sand Monster");
+        location.replace('/api/sandmonster');
+    }
+    else if((blueAnswers > greenAnswers) && (blueAnswers > yellowAnswers) && (blueAnswers > redAnswers)){
+        console.log("This is Snow Monster");
+        location.replace('/api/snowmonster');
+    }
 }
 
-
-
-//Function to check duplicates
-// function countDups(answerChoice){
-//     var answerChoice = ['green', 'red', 'yellow', 'blue'];
-//     var answersArray = answerChoice.sort(); 
-
-//     var reportAnswerDups = [];
-//     for (var i = 0; i < answersArray.length - 1; i++) {
-//         if (answersArray[i + 1] == answersArray[i]) {
-//             reportAnswerDups.push(answersArray[i]);
-//         }
-//     console.log(reportAnswerDups)
-//     }
-// };
 
 //Event Listeners
 submitButton.addEventListener('click', () =>{
     var test = answerChoice();
     var test2 = answerArray();
-    // answerResults();
-    console.log(test)
 });
-
-
-//Answer Results
-// const answerResults = () => {
-//     if userScore > 
-//
