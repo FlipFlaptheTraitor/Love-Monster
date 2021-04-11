@@ -52,7 +52,7 @@ const answerArray = function () {
     }
     else if((yellowAnswers > greenAnswers) && (yellowAnswers > redAnswers) && (yellowAnswers > blueAnswers)){
         console.log("This is Sand Monster");
-        location.replace('/api/sandmonster');
+        location.replace('/api/seamonster');
     }
     else if((blueAnswers > greenAnswers) && (blueAnswers > yellowAnswers) && (blueAnswers > redAnswers)){
         console.log("This is Snow Monster");

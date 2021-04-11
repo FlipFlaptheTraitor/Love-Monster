@@ -27,7 +27,7 @@ const sess = {
 
 
 
-
+app.use(express.static('public/pic'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -51,13 +51,13 @@ const user = userJoin(socket.id, username, room);
   //Welcomse user
   socket.emit('message', formatMessage( botName, 'Welcome to Love Monster Chat'));
 
-//broudcast when a user connects
-  socket.broudcast.to(user.room)
-  .emit('message', formatMessage( botName,`${user.username} has joined the chat`));
-io.to(user.room).emit('roomUsers', {
-  room: user.room,
-  users: getRoomUsers(user.room)
-});
+// //broudcast when a user connects
+//   socket.broudcast.to(user.room)
+//   .emit('message', formatMessage( botName,`${user.username} has joined the chat`));
+// io.to(user.room).emit('roomUsers', {
+//   room: user.room,
+//   users: getRoomUsers(user.room)
+// });
 });
 //listens for chatmsg
 socket.on('chatMessage', msg => {
@@ -85,5 +85,5 @@ socket.on('dissconect', () => {
 const PORT = process.env.PORT || 3001;
 
 sequelize.sync({ force: false }).then(() => {
-   app.listen(PORT, () => console.log(`Now listening on port ${PORT}!`));
+   server.listen(PORT, () => console.log(`Now listening on port ${PORT}!`));
 });
