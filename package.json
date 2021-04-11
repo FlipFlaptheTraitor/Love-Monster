@@ -33,6 +33,6 @@
     "node": "^15.12.0",
     "sequelize": "^6.6.2",
     "sessions": "0.0.2-7",
-    "socket.io": "^4.0.1"
+    "socket.io": "^2.4.1"
   }
 }
