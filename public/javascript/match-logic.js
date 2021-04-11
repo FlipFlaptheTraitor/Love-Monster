@@ -52,11 +52,27 @@ const answerArray = function () {
     }
     else if((yellowAnswers > greenAnswers) && (yellowAnswers > redAnswers) && (yellowAnswers > blueAnswers)){
         console.log("This is Sand Monster");
-        location.replace('/api/sandmonster');
+        location.replace('/api/seamonster');
     }
     else if((blueAnswers > greenAnswers) && (blueAnswers > yellowAnswers) && (blueAnswers > redAnswers)){
         console.log("This is Snow Monster");
         location.replace('/api/snowmonster');
+    }
+    else if ((blueAnswers === greenAnswers) || (blueAnswers === yellowAnswers) || (blueAnswers === redAnswers)){
+        console.log("You're a Wild Thing!");
+        location.replace('/api/wildthing');
+    }
+    else if ((greenAnswers === blueAnswers) || (greenAnswers === yellowAnswers) || (greenAnswers === redAnswers)){
+        console.log("You're a Wild Thing!");
+        location.replace('/api/wildthing');
+    }
+    else if ((redAnswers === greenAnswers) || (redAnswers === yellowAnswers) || (redAnswers === blueAnswers)){
+        console.log("You're a Wild Thing!");
+        location.replace('/api/wildthing');
+    }
+    else if ((yellowAnswers === greenAnswers) || (yellowAnswers === blueAnswers) || (yellowAnswers === redAnswers)){
+        console.log("You're a Wild Thing!");
+        location.replace('/api/wildthing');
     }
 }
 

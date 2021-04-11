@@ -8,7 +8,7 @@
 }
 * {
 	box-sizing: border-box;
-	margin: 0;
+	margin: 10px;
 	padding: 0;
 }
 
@@ -94,7 +94,7 @@ form {
 }
 
 
-.btn {
+.btn, .join-btn {
 	cursor: pointer;
 	padding: 5px 15px;
 	background: #C3073F;
@@ -134,10 +134,31 @@ footer {
   border-top: 3px solid #950740;
   padding: 1%;
   font-size: 1.5rem;
-  position: absolute;
+  position: static;
   bottom: 0;
   width: 100%;
   height: 2rem;    
+}
+
+/* Monster Results Container */
+.results {
+	height: 100%;
+	width: 100%;
+}
+
+/* Monster Results Text */
+.monster-result {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: left;
+}
+/*Monster Images */
+.monster-img {
+	border-radius: 8px;
+	width: 500px;
+	height: 500px;
+	justify-content: right;
 }
 
 /* Chat Page */
