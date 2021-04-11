@@ -63,8 +63,8 @@ const Question = require('./question');
 Monster.hasMany(User);
 User.belongsTo(Monster);
 
-// User.belongsToMany(User,{ through: Matches,as: "monster", foreignKey: "id" });
-// User.belongsToMany(User, { through: Matches, as: "suitor", foreignKey: "id" });
+ User.belongsToMany(User,{ through: Matches,as: "stuff", foreignKey: "id" });
+ User.belongsToMany(User, { through: Matches, as: "suitor", foreignKey: "id" });
 module.exports = {
    User,
    Post,
