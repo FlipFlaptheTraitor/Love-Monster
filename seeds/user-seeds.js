@@ -9,19 +9,19 @@ const UserData = [
     },
     {
         username: 'Sam',
-        email: 'aaa@bbb.com',
+        email: 'aab@bbb.com',
         password: 'password',
         monsterId: 2
     },
     {
         username: 'Julie',
-        email: 'aaa@bbb.com',
+        email: 'aba@bbb.com',
         password: 'password',
         monsterId: 3
     },
     {
         username: 'Alex',
-        email: 'aaa@bbb.com',
+        email: 'abb@bbb.com',
         password: 'password',
         monsterId: 4
     }
