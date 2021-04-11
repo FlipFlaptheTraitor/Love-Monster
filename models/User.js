@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 const bcrypt = require('bcrypt');
+const { Monster } = require('.');
 
 class User extends Model {
     checkPassword(loginPw) {
@@ -33,6 +34,14 @@ User.init(
           allowNull: false,
           validate: {
             len: [4]
+          }
+        },
+        monsterId: {
+          type: DataTypes.INTEGER,
+          allowNull: true,
+          references: {
+            model: 'monster',
+            key: 'id'
           }
         }
       },
