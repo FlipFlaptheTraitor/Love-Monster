@@ -60,7 +60,7 @@ router.get('/:id', (req, res) => {
 // create new user
 router.post('/', (req, res) => {
   User.create(req.body)
-  .then( user => res.status(200).json(product))
+  .then( user => res.status(200).json(user))
   .catch((err) => {
     console.log(err);
     res.status(400).json(err);
@@ -72,7 +72,7 @@ router.post('/', (req, res) => {
 router.post('/login',  (req, res) => {
     User.findOne({
         where: {
-        email: req.body.username
+        username: req.body.username
         }
     }).then(dbUserData => {
         if (!dbUserData) {

@@ -15,7 +15,7 @@ async function loginFormHandler(event) {
       });
   
       if (response.ok) {
-        document.location.replace('/dashboard');
+        location.replace('/api/chat-routes');
       } else {
         alert(response.statusText);
       }
@@ -42,7 +42,7 @@ async function loginFormHandler(event) {
   
       // check the response status
       if (response.ok) {
-        document.location.replace('/dashboard');
+        location.replace('/api/monsterQs');
       } else {
         alert(response.statusText);
       }

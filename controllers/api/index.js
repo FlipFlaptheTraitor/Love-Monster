@@ -19,7 +19,6 @@ router.use('/mudmonster', mudRoutes);
 router.use('/seamonster', seaRoutes); 
 router.use('/lavamonster', lavaRoutes);
 router.use('/snowmonster', snowRoutes);
-router.use('/users', userRoutes);
 router.use('/chat', chatRoutes);
 router.use('/wildthing', wildRoutes);
 
