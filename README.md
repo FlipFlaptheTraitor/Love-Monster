@@ -60,7 +60,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 
   ## Mvp
-    An application that allows users to join and fill out a questionnaire that is based upon personality and categorization. The app will then match users based upon similar types of answers to the questionnaire. After matched the users will be directed to a live chat. The live chat will be similar to the concept of the dating game where one users is the admirer and 3 other users are trying to be picked by the admirer for a continuing 1 on 1 conversation.
+    An application that allows users to join and fill out a questionnaire that is based upon personality and categorization. The app will then match users based upon similar types of answers to the questionnaire. After matched the users will be directed to a live chat. The live chat will allow users to chat and see each others monster types so that they might find a compatable significant other.
 
   ## User_Stories
     As single person I am looking for a fun experience while searching for a potential partner
@@ -74,10 +74,4 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   WHEN I am finished filling out all the information  
   THEN I am able to choose between opening an empty room, going into an open chat forum with high compatibility users, or browse open rooms.
   WHEN I launch the open chat 
-  THEN I am prompted to answer whether to be the admirer or the suitor
-  WHEN If an admirer choices a suitor  
-  THEN The admirer and suitor are put into an one on one chat
-  WHEN if an admire doesn't choose a suitor 
-  THEN The chat is ended
-  WHEN If both the suitor and admirer choose to chat later
-  THEN Their user information is stored in each others account to carry on conversations later
+  THEN I am able to communicate with other users
