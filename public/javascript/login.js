@@ -15,7 +15,7 @@ async function loginFormHandler(event) {
       });
   
       if (response.ok) {
-        location.replace('/api/chat-routes');
+        location.replace('/api/chat');
       } else {
         alert(response.statusText);
       }
