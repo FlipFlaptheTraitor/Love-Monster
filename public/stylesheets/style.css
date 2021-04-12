@@ -94,8 +94,17 @@ form {
 }
 
 
-.btn, .join-btn {
+.btn, .join-btn, {
 	cursor: pointer;
+	padding: 5px 15px;
+	background: #C3073F;
+	color: var(--dark-color-a);
+	border: 0;
+	font-size: 17px;
+}
+
+#leave-btn{
+  cursor: pointer;
 	padding: 5px 15px;
 	background: #C3073F;
 	color: var(--dark-color-a);
