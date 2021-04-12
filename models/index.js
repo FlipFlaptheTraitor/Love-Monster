@@ -1,9 +1,6 @@
 const User = require('./user');
-
 const Monster = require('./Monster');
-
 const Matches = require('./Matches');
-
 
 
 Monster.hasMany(User);
@@ -13,9 +10,6 @@ User.belongsToMany(User,{ through: Matches, as: "userMonster", foreignKey: "mons
 User.belongsToMany(User, { through: Matches, as: "userSuitor", foreignKey: "suitorUserId" });
 module.exports = {
    User,
- 
    Monster,
-   
    Matches,
-   
 };
