@@ -141,20 +141,20 @@ footer {
   height: 2rem;    
 }
 
-/* Monster Results Container */
+/* Monster Results Container (Nikki) */
 .results {
 	height: 100%;
 	width: 100%;
 }
 
-/* Monster Results Text */
+/* Monster Results Text (Nikki) */
 .monster-result {
 	height: 100%;
 	width: 100%;
 	display: flex;
 	justify-content: left;
 }
-/*Monster Images */
+/*Monster Images (Nikki) */
 .monster-img {
 	border-radius: 8px;
 	width: 500px;
