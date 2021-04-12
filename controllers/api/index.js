@@ -22,5 +22,4 @@ router.use('/snowmonster', snowRoutes);
 router.use('/chat', chatRoutes);
 router.use('/wildthing', wildRoutes);
 
-
 module.exports = router;

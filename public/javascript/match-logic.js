@@ -1,5 +1,5 @@
 const submitButton = document.getElementById('submit-btn');
-let answerEl = $('#answerDiv');
+let answerEl = $('#answerDiv')
 
 const answerChoice = function () {
 
@@ -82,4 +82,3 @@ submitButton.addEventListener('click', () =>{
     var test = answerChoice();
     var test2 = answerArray();
 });
-
