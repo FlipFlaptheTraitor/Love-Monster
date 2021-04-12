@@ -53,7 +53,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   ## Contributing
   [![GitHub contributors](https://img.shields.io/github/contributors/Naereen/StrapDown.js.svg)](https://github.com/FlipFlaptheTraitor/Love_Monster/graphs/contributors)
   [![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)]( https://github.com/FlipFlaptheTraitor)
- Edited by Nikki Goodridge (), Paul Kupiszewski (PaulKup), Preston Geyer (Prestongeyer713), Urika Pye (Upye), Kevin Miller (FlipFlaptheTraitor) using Git and VScode
+ Edited by Nikki Goodridge (NGoody315), Paul Kupiszewski (PaulKup), Preston Geyer (Prestongeyer713), Urika Pye (Upye), Kevin Miller (FlipFlaptheTraitor) using Git and VScode
 
   ## Tests
 
