@@ -79,6 +79,6 @@ const answerArray = function () {
 
 //Event Listeners
 submitButton.addEventListener('click', () =>{
-    var test = answerChoice();
-    var test2 = answerArray();
+    answerChoice();
+    answerArray();
 });

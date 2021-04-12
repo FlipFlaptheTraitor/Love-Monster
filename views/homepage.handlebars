@@ -1,42 +1,57 @@
+<div class='login-form'>
+	<h2>LOGIN MONSTERS!</h2>
+      <form class="login-form">
+   <div>
+      <label for="email-login">email:</label>
+      <input type="text" id="email-login" />
+   </div>
+   <div>
+      <label for="password-login">password:</label>
+      <input type="password" id="password-login" />
+   </div>
+   <div>
+      <button type="submit">login</button>
+   </div>
+</form>
+<h2>NEW MONSTER SIGN UP</h2>
+<form class="signup-form">
+   <label>First Name</label>
+ <input type="text" id="first-name" name="first-name">
+ <label>Last Name</label>
+ <input type="text" id="last-name" name="last-name">
+<div name="dob"> 
+    <label>Date of Birth</label>
+    <input type="date" id="date" name="date">
+ </div>
+ <div>
+      <label for="username-signup">Create Username:</label>
+      <input type="text" id="username-signup" />
+   </div>
+<div>
+      <label for="password-signup">Create Password:</label>
+      <input type="password" id="password-signup" />
+   </div>
+<div name="gender">
+ <div>Gender</div>
+ <input type="radio" name="male" value="male" >
+ <label for="male">Male</label> 
+ <input type="radio" name="female" value="female">
+ <label for="male">Female</label> 
+</div>
+<div name="pre-gender">
+    <label>Select your prefered gender(s)</label>
+ <input type="checkbox" name="gender1" value="male"> Male
+ <input type="checkbox" name="gender2" value="female"> Female
+</div>
+<label>E-mail</label>
+ <input type="email" id="email" name="email">
+ <label>Phone Number</label>
+ <input type="tel" id="phone" name="phone">
+ <label>Are you over the age of 18 and is the information above correct?</label>
 
-<div class="join-container">
-			<header class="join-header">
-				<h1><i class="fas fa-smile"></i> Love Monster</h1>
-                <h3 class="nav-item">
-        {{#if loggedIn}}
-          <a class="nav-link" href="/dashboard">Dashboard</a>
-      </h3>
-      <nav class="nav-link">
-         <button id="logout" class="nav-link active">logout</button>
-        {{else}}
-         <a class="nav-link navbar-right" href="/login">login</a>
-        {{/if}}
-			</header>
-			<main class="join-main">
-				<form action="chat.html">
-					<div class="form-control">
-						<label for="username">Username</label>
-						<input
-							type="text"
-							name="username"
-							id="username"
-							placeholder="Enter username..."
-							required
-						/>
-					</div>
-					<div class="form-control">
-						<label for="room">Room</label>
-						<select name="room" id="room">
-							<option value="JavaScript">JavaScript</option>
-							<option value="Python">Python</option>
-							<option value="PHP">PHP</option>
-							<option value="C#">C#</option>
-							<option value="Ruby">Ruby</option>
-							<option value="Java">Java</option>
-						</select>
-					</div>
-					<button type="submit" class="btn">Join Chat</button>
-				</form>
-                {{#if loggedIn}}
-    <script src="/javascript/logout.js"></script>
-    {{/if}}
+ <input type="button" value="Yes, I am 18 years or older" id="signup-btn">  
+<input type="button" value="No, I am a child" id="no-btn">
+</form>
+</div>
+
+<script src="/javascript/login.js"></script>
