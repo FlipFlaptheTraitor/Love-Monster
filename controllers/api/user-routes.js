@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Monster, Matches, Comment } = require('../../models');
+const { User, Monster, Matches } = require('../../models');
 const session = require('express-session');
 const withAuth = require('../../utils/auth');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -33,8 +33,15 @@ router.get('/:id', (req, res) => {
                 model: Monster
             },
             {
-                model: Matches
-            }
+                model: User,
+                through: Matches,
+                as: 'userMonster'
+            },
+            {
+              model: User,
+              through: Matches,
+              as: 'userSuitor'
+          },
         ]
     })
     .then(user => {
@@ -53,19 +60,19 @@ router.get('/:id', (req, res) => {
 // create new user
 router.post('/', (req, res) => {
   User.create(req.body)
-  .then( user => res.status(200).json(product))
+  .then( user => res.status(200).json(user))
   .catch((err) => {
     console.log(err);
     res.status(400).json(err);
   });
-})
+});
 
 
 // login to account
 router.post('/login',  (req, res) => {
     User.findOne({
         where: {
-        email: req.body.username
+        username: req.body.username
         }
     }).then(dbUserData => {
         if (!dbUserData) {
@@ -124,7 +131,13 @@ router.put('/:id', withAuth, (req, res) => {
 
 // delete user
 router.delete('/:id', withAuth, (req, res) => {
-    User.destroy({
+    Matches.destroy({
+      where: {
+        monsterUserId: req.params.id,
+        suitorUserId: req.params.id
+      }
+    })
+    .then(User.destroy({
       where: {
         id: req.params.id
       }
@@ -139,7 +152,7 @@ router.delete('/:id', withAuth, (req, res) => {
       .catch(err => {
         console.log(err);
         res.status(500).json(err);
-      });
+      }))
   });
 
 module.exports = router;

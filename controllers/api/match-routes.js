@@ -1,9 +1,9 @@
 const router = require('express').Router();
-const { Monster } = require('../../models');
+const { Matches } = require('../../models');
 
 router.get('/', (req, res) => {
-    Monster.findAll()
-    .then(monsters => res.json(monsters))
+    Matches.findAll()
+    .then(matches => res.json(matches))
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
@@ -11,23 +11,23 @@ router.get('/', (req, res) => {
 })
 
 router.get('/:id', (req, res) => {
-    Monster.findOne({
+    Matches.findOne({
         where: {
             id: req.params.id
         }
     })
-    .then(monster => {
-        if (!monster) {
+    .then(match => {
+        if (!match) {
             res.status(404).json({ message: 'No monster found with this id' });
             return;
         }
-        res.json(monster);
+        res.json(match);
     });
 });
 
 router.post('/', (req, res) => {
-    Monster.create(req.body)
-    .then( monster => res.status(200).json(monster))
+    Matches.create(req.body)
+    .then( match => res.status(200).json(match))
     .catch((err) => {
       console.log(err);
       res.status(400).json(err);
@@ -36,17 +36,17 @@ router.post('/', (req, res) => {
 
 router.put('/:id', (req, res) => {
   
-    Monster.update(req.body, {
+    Matches.update(req.body, {
         where: {
             id: req.params.id
         }
     })
-      .then(dbMonsterData => {
-        if (!dbMonsterData[0]) {
+      .then(match => {
+        if (!match[0]) {
           res.status(404).json({ message: 'No monster found with this id' });
           return;
         }
-        res.json(dbMonsterData);
+        res.json(match);
       })
       .catch(err => {
         console.log(err);
@@ -55,17 +55,17 @@ router.put('/:id', (req, res) => {
   });
 
   router.delete('/:id', (req, res) => {
-    Monster.destroy({
+    Matches.destroy({
       where: {
         id: req.params.id
       }
     })
-      .then(dbMonsterData => {
-        if (!dbMonsterData) {
+      .then(match => {
+        if (!match) {
           res.status(404).json({ message: 'No user found with this id' });
           return;
         }
-        res.json(dbMonsterData);
+        res.json(match);
       })
       .catch(err => {
         console.log(err);

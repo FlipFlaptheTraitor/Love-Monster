@@ -1,8 +1,27 @@
-<div id="chat app">
-   <div id="message-container"></div>
-   <form id="send-container">
-       <input type="text" id="message-input">
-       <button type="submit" id="send-button">Send</button>
-   </form>
-</div>
- 
+ <div class="chat-container">
+      <header class="chat-header">
+        <h1><i class="fas fa-smile"></i> Love monster</h1>
+        <a id="leave-btn" class="btn" href="/">Leave Room</a>
+      </header>
+      <main class="chat-main">
+        <div class="chat-sidebar">
+          <h3><i class="fas fa-comments">Global</i> Room Name:</h3>
+          <h2 id="room-name"></h2>
+          <h3><i class="fas fa-users">Test</i> Users</h3>
+          <ul id="users"></ul>
+        </div>
+        <div class="chat-messages"></div>
+      </main>
+      <div class="chat-form-container">
+        <form id="chat-form">
+          <input
+            id="msg"
+            type="text"
+            placeholder="Enter Message"
+            required
+            autocomplete="off"
+          />
+          <button class="btn"><i class="fas fa-paper-plane"></i> Send</button>
+        </form>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="/javascript/chatapp.js"></script>
