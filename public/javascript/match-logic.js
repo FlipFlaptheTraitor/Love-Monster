@@ -68,7 +68,19 @@ const answerArray = function () {
     }
     else if ((redAnswers === greenAnswers) || (redAnswers === yellowAnswers) || (redAnswers === blueAnswers)){
         console.log("You're a Wild Thing!");
-        location.replace('/api/wildthing');
+        
+        let response = await fetch('/api/users/login', {
+            method: 'post',
+            body: JSON.stringify({
+              id: 
+            }),
+            headers: { 'Content-Type': 'application/json' }
+          });
+          if (response.ok) {
+            location.replace('/api/wildthing');
+          } else {
+            alert(response.statusText);
+          }
     }
     else if ((yellowAnswers === greenAnswers) || (yellowAnswers === blueAnswers) || (yellowAnswers === redAnswers)){
         console.log("You're a Wild Thing!");
