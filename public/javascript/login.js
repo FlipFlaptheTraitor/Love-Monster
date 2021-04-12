@@ -21,7 +21,6 @@ async function loginFormHandler(event) {
       }
     }
   }
-  
   async function signupFormHandler(event) {
     event.preventDefault();
   
